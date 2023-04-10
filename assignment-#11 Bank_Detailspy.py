@@ -15,10 +15,10 @@ class BankAccount:
 
     def withdraw(self):
         WITHDRAW = int(input("How much do you want to withdaw: "))
-            if WITHDRAW > self.balance:
+        if WITHDRAW > self.balance:
                 print("Balance is not enough. Try again ")   
                 WITHDRAW = int(input("How much do you want to withdaw: "))
-            else:
+        else:
                 balance_left_withdrawn = self.balance - WITHDRAW
                 print("This amount has been withdrawn: ",WITHDRAW)
 
