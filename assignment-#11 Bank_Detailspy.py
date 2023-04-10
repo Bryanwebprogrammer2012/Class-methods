@@ -8,17 +8,19 @@ class BankAccount:
 
 
 
-    def deposit(self,amount): 
-       print("This amount has been deposited: ",amount)
+    def deposit(self):
+        DEPOSIT = int(input("How much do you want to deposit: "))
+        print("This amount has been deposited: ",DEPOSIT)
        
 
-    def withdraw(self,amount):
-            if amount > self.balance:
+    def withdraw(self):
+        WITHDRAW = int(input("How much do you want to withdaw: "))
+            if WITHDRAW > self.balance:
                 print("Balance is not enough. Try again ")   
+                WITHDRAW = int(input("How much do you want to withdaw: "))
             else:
-                balance_left_withdrawn = self.balance - amount
-
-                print("This amount has been withdrawn: ",amount)
+                balance_left_withdrawn = self.balance - WITHDRAW
+                print("This amount has been withdrawn: ",WITHDRAW)
 
     def customer_details(self):
         print("Account number: ",self.account_number)
@@ -31,10 +33,9 @@ class BankAccount:
         balance_left = self.balance - withdrawn_money + money_deposited
         print("This is the current balance: ", balance_left)
 
-    
 details = BankAccount(231, "26 Feb 2023","Carol", 400000)
-details.deposit(5000)
-details.withdraw(20000)
+details.deposit(DEPOSIT)
+details.withdraw()
 details.customer_details()
 details.check_balance(20000,5000)
 
